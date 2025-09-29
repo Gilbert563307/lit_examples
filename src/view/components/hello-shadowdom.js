@@ -3,6 +3,10 @@
 export class HelloShadowDOM extends HTMLElement {
     constructor() {
         super();
+
+        // With the open mode you can access the Shadow DOM via the shadowRoot property of the HTML element.
+
+        // With the closed mode you cannot. shadowRoot will return null.
         this.shadowDOM = this.attachShadow({ mode: 'closed' });
 
 

@@ -2,7 +2,7 @@ export class HelloWorld extends HTMLElement {
   constructor() {
     super();
      this.textContent = 'Hello World';
-    console.log(this);
+      console.log(this);
   }
 }
 
