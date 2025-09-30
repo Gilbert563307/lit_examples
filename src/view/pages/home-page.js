@@ -6,6 +6,9 @@ import "../components/hello-shadowdom.js";
 import "../components/hello-lifecycle.js"
 import "../components/custom-element.js";
 import "../components/shadow-dom-card.js"
+import "../components/dynamic-content.js";
+import "../components/custom-elements-changes.js";
+import "../components/custom-counter.js";
 // import { HelloLifecycle } from '../components/hello-lifecycle.js';
 
 // Creating an instance of the custom element
