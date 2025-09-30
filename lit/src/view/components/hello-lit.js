@@ -11,8 +11,8 @@ export class HelloLit extends LitElement {
         super();
         this.message = "Lit";
     }
-    render(){
-        return html `<h1>Hello ${this.message}</h1>`
+    render() {
+        return html`<h1>Hello ${this.message}</h1>`
     }
 }
 
