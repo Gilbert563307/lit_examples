@@ -29,6 +29,7 @@ export class CountDownTimer extends LitElement {
         }, ONE_SECOND_IN_MILL);
     }
 
+    //get loaded in component html is rendered
     firstUpdated(){
         const formElement = this.shadowRoot?.querySelector("form");
         formElement?.addEventListener("submit", this.startCountDown.bind(this))

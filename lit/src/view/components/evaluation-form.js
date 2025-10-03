@@ -1,4 +1,7 @@
 import { LitElement, html, css } from 'lit';
+import './number-range-input';
+import './fieldset-cursist-info';
+
 
 // https://s3-kennisbank.tomkemper.nl/frontend/lit-web-components/input-components.html
 export class EvaluationForm extends LitElement {
@@ -86,106 +89,13 @@ export class EvaluationForm extends LitElement {
     return html`
       <h1>Evaluation Form</h1>
       <form @submit=${this.submitHandler}>
-        <fieldset class="cursist-info">
-          <legend>Cursist Information</legend>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="address">Address:</label>
-          <input type="text" id="address" name="address" required />
-
-          <label for="phone">Phone:</label>
-          <input type="tel" id="phone" name="phone" required />
-
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-        </fieldset>
+      <!--  <fieldset-cursist-info name="cursistInfo" required></fieldset-cursist-info> -->
 
         <fieldset class="evaluation-topics">
           <legend>Topics</legend>
-          <label for="html-value">HTML:</label>
-          <input type="number" id="html-value" name="html" min="0" max="10" required />
-          <div>
-            <input
-              type="range"
-              id="html-slider"
-              name="html"
-              list="values"
-              aria-label="html-slider"
-              min="0"
-              max="10"
-              required
-            />
-            <datalist id="values">
-              <option value="0" label="0"></option>
-              <option value="1" label="1"></option>
-              <option value="2" label="2"></option>
-              <option value="3" label="3"></option>
-              <option value="4" label="4"></option>
-              <option value="5" label="5"></option>
-              <option value="6" label="6"></option>
-              <option value="7" label="7"></option>
-              <option value="8" label="8"></option>
-              <option value="9" label="9"></option>
-              <option value="10" label="10"></option>
-            </datalist>
-          </div>
-
-          <label for="css-value">CSS:</label>
-          <input type="number" id="css-value" name="css" min="0" max="10" required />
-          <div>
-            <input
-              type="range"
-              id="css-slider"
-              name="css"
-              list="values"
-              aria-label="css-slider"
-              min="0"
-              max="10"
-              required
-            />
-            <datalist id="values">
-              <option value="0" label="0"></option>
-              <option value="1" label="1"></option>
-              <option value="2" label="2"></option>
-              <option value="3" label="3"></option>
-              <option value="4" label="4"></option>
-              <option value="5" label="5"></option>
-              <option value="6" label="6"></option>
-              <option value="7" label="7"></option>
-              <option value="8" label="8"></option>
-              <option value="9" label="9"></option>
-              <option value="10" label="10"></option>
-            </datalist>
-          </div>
-
-          <label for="js-value">JavaScript:</label>
-          <input type="number" id="js-value" name="js" min="0" max="10" required />
-          <div>
-            <input
-              type="range"
-              id="js-slider"
-              name="js"
-              list="values"
-              aria-label="js-slider"
-              min="0"
-              max="10"
-              required
-            />
-            <datalist id="values">
-              <option value="0" label="0"></option>
-              <option value="1" label="1"></option>
-              <option value="2" label="2"></option>
-              <option value="3" label="3"></option>
-              <option value="4" label="4"></option>
-              <option value="5" label="5"></option>
-              <option value="6" label="6"></option>
-              <option value="7" label="7"></option>
-              <option value="8" label="8"></option>
-              <option value="9" label="9"></option>
-              <option value="10" label="10"></option>
-            </datalist>
-          </div>
+          <number-range-input name="html" label="HTML" min="0" max="10" required></number-range-input>
+          <number-range-input name="css" label="CSS" min="0" max="10" required></number-range-input>
+          <number-range-input name="javascript" label="JavaScript" min="0" max="10" required></number-range-input>
         </fieldset>
 
         <button type="submit">Save</button>

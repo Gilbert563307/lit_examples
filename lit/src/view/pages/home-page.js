@@ -8,6 +8,7 @@ import "../components/col-helper.js";
 import '../components/evaluation-form';
 import "../components/count-down-timer.js";
 import "../components/weather-widget";
+import "../components/evaluation-form.js";  
 
 // const attrBtn = document.querySelector('#attrBtn');
 // const attrInput = document.querySelector('#attrInput');
