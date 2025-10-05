@@ -4,7 +4,6 @@ export class FieldsetCursistInfo extends LitElement {
   #internals;
 
   //   if you now run the application, you will get an error in the console at the setFormValue method, stating that the element is not a form-associated custom element.
-
   // To fix this, we have to add a static property formAssociated to our component and set it to true. This tells the browser that our component is a form-associated custom element.
   static formAssociated = true;
 
