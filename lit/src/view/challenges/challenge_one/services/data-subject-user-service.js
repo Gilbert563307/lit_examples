@@ -3,7 +3,7 @@ export class DataSubjectUserService extends EventTarget {
     #subscribers = [];
 
     addData(item) {
-        this.#serviceData = [...this.#serviceData, item];
+        this.#serviceData = item;
         this.notify(this.#serviceData);
     }
 
@@ -16,7 +16,6 @@ export class DataSubjectUserService extends EventTarget {
     }
 
     notify(data) {
-        console.log(this.#subscribers);
         this.#subscribers.forEach(observer => observer.next(data));
     }
 }

@@ -23,7 +23,7 @@ export class DataList extends LitElement {
     }
 
     next(data) {
-        this.data = [...data[0]];
+        this.data = data;
     }
 
     async fetchData() {
@@ -36,6 +36,10 @@ export class DataList extends LitElement {
 
 
         dataSubjectUserService.subscribe(this.observer);
+
+        userService.getUsers().then(users => {
+            dataSubjectUserService.addData(users);
+        });
     }
 
     disconnectedCallback() {
@@ -56,7 +60,7 @@ export class DataList extends LitElement {
                 <p>Entries</p>
                 <div>
                 ${this.data.map((obj) => html`
-                        <data-list-item .data=${obj}></data-list-item>
+                       <data-list-item .data=${obj}></data-list-item> 
                     `)}
                 </div>
             </article>

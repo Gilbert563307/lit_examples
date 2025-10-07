@@ -1,6 +1,7 @@
 
 import { html, LitElement } from "lit";
 import { userService } from "../services/user-service";
+import { dataSubjectUserService } from "../services/data-subject-user-service";
 
 export class DataListItem extends LitElement {
     constructor() {
@@ -14,16 +15,15 @@ export class DataListItem extends LitElement {
         data: { type: Object }
     }
 
-    connectedCallback(){
-        super.connectedCallback();
-    }
-
+   
     async editHandler() {
         console.log("editHandler")
     }
 
     async deleteHandler() {
-        await userService.deleteUser(this.data.user);
+        await userService.deleteUser(this.data.id);
+        const users = await userService.getUsers();
+        dataSubjectUserService.addData(users);
     }
 
     render() {

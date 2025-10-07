@@ -20,9 +20,11 @@ export class UserService {
             method: "POST",
             body: JSON.stringify(user),
         });
-        const data = await response.json();
+        const newUser = await response.json();
 
-        return data;
+        // notify all components about the updated list
+        const users = await this.getUsers();
+        dataSubjectUserService.addData(users);
     }
 
     async deleteUser(id) {

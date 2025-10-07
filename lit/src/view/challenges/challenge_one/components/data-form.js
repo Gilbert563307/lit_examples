@@ -1,6 +1,5 @@
 import { html, LitElement } from "lit";
 import { userService } from "../services/user-service";
-import { dataSubjectUserService } from "../services/data-subject-user-service";
 
 
 //https://github.com/HU-SD-S3/s3-kennisbank/blob/main/frontend/data-exchange/challenges.md
@@ -16,17 +15,7 @@ export class DataForm extends LitElement {
         data: { type: Array }
     }
 
-    async addData() {
-        const response = await userService.getUsers();
-        dataSubjectUserService.addData(response);
-    }
-
-    connectedCallback() {
-        super.connectedCallback();
-        this.addData();
-    }
-
-
+    
     async submitHandler(event) {
         event.preventDefault();
         const form = event.target;
