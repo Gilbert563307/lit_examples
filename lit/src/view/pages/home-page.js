@@ -14,8 +14,11 @@ console.log('Home Page loaded');
 // import "../components/DataProducer";
 // import "../components/event-producer";
 // import "../components/event-consumer";
-import "../components/data-generator";
-import "../components/data-observer";
+// import "../components/data-generator";
+// import "../components/data-observer";
+
+import "../challenges/challenge_one/components/data-form";
+import "../challenges/challenge_one/components/data-list";
 
 // const attrBtn = document.querySelector('#attrBtn');
 // const attrInput = document.querySelector('#attrInput');
