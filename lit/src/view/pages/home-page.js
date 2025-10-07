@@ -10,7 +10,12 @@ console.log('Home Page loaded');
 // import "../components/weather-widget";
 // import "../components/evaluation-form.js";  
 // import '../components/image-list';
-import "../components/my-component.js";
+// import "../components/my-component.js";
+// import "../components/DataProducer";
+// import "../components/event-producer";
+// import "../components/event-consumer";
+import "../components/data-generator";
+import "../components/data-observer";
 
 // const attrBtn = document.querySelector('#attrBtn');
 // const attrInput = document.querySelector('#attrInput');
