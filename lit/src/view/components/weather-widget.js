@@ -1,4 +1,5 @@
 import { LitElement, html, css } from "lit";
+import { weatherService } from "../services/weather-service";
 
 export class WeatherWidget extends LitElement {
     constructor() {
@@ -83,17 +84,8 @@ export class WeatherWidget extends LitElement {
         weatherDescription: { type: String }
     };
 
-    async getDataFromApi(cityName) {
-        const key = "";
-        const url = `http://api.weatherapi.com/v1/current.json?key=${key}&q=${cityName}&aqi=no`;
-        const resp = await fetch(url);
-        const data = await resp.json();
-        this.temperature = data.current.temp_c;
-        this.weatherDescription = `Het voelt aan als ${data.current.feelslike_c}`;
-        console.log(data)
-    }
 
-    async fetchWeather(event) {
+    fetchWeather(event) {
         event.preventDefault();
         const form = event.target;
         const formData = new FormData(form);
@@ -101,9 +93,16 @@ export class WeatherWidget extends LitElement {
         const cityName = data.cityName;
 
         this.cityName = cityName;
+        this.retrieveData(cityName).then((data) => {
+            this.temperature = data.current.temp_c;
+            this.weatherDescription = `Het voelt aan als ${data.current.feelslike_c}`;
+        });
 
-        await this.getDataFromApi(cityName);
+    }
 
+    async retrieveData(cityName) {
+        const data = await weatherService.getDataFromApi(cityName);
+        return data;
     }
 
     connectedCallback() {

@@ -61,8 +61,8 @@ export class EventProducer extends LitElement {
         //     //the detail property is used to pass data with the event.
         //     detail: this.data,
         //     //this means the event will bubble through the shadowDom boundary because the composed  is true
-        //     bubbles: true,
-        //     composed: true,
+        //     bubbles: true, //bubble up to the dom
+        //     composed: true, //you can bubble out your shadowdom
         // });
         // this.dispatchEvent(customEvent);
 
