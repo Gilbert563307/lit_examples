@@ -1,3 +1,4 @@
+//view luistert niet meer
 export class DataSubjectUserService extends EventTarget {
     #serviceData = [];
     #subscribers = [];
