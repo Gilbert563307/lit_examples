@@ -1,7 +1,16 @@
 import { dataSubjectUserService } from "./data-subject-user-service";
 
 export class UserService {
+
+    /** zo wordt de users lijst toch gebruikt als een single ton 
+     * zonder de klas te hoeven exporten als een singleton
+     * 
+     */
+    static
+    users;
+
     constructor() {
+        this.users = [];
         this.API_URl = "http://localhost:3000/users";
     }
 
